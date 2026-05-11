@@ -15,7 +15,6 @@
         <span>${post.createdAt || 'Hace un momento'}</span>
     </div>
 </div>
-
 <div class="post-content">
     <div class="post-title">${post.title}</div>
     <p>${post.content}</p>

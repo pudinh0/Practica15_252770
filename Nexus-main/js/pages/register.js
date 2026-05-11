@@ -1,7 +1,7 @@
 import AuthService from '../services/AuthService.js';
+
 document.addEventListener('DOMContentLoaded', () => {
-    const registerForm = document.getElementById('registerForm');
-    
+    const registerForm = document.getElementById('register-form');
     if (registerForm) {
         registerForm.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -10,12 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const password = document.getElementById('password').value;
             try {
                 await AuthService.register(name, email, password);
-                alert('Registro existoso');
+                alert('Registro exitoso. Ahora puedes iniciar sesión.');
                 window.location.href = 'login.html';
-            }
-            catch (error) {
-                alert(error.message);
+            } catch (err) {
+                alert(err.message);
             }
         });
     }
-}); 
+});
